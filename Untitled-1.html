@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #e6c3c3;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Filterable Table</h2>
+<p>Type something in the input field to search the table for first names, last names, team or salary:</p>  
+<input id="myInput" type="text" placeholder="Search..">
+<br><br>
+
+<table>
+  <thead>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Team</th>     
+    <th>Salary</th>
+  </tr>
+  </thead>
+  <tbody id="myTable">
+  <tr>
+    <td>Stephen</td>
+    <td>Curry</td>
+    <td>Golden State Warriors</td>
+    <td>$48,070,014</td>
+  </tr>
+  <tr>
+    <td>Russell</td>
+    <td>Westbrook</td>
+    <td>Los Angeles Lakers</td>
+    <td>$47,063,478</td>
+  </tr>
+  <tr>
+    <td>LeBron</td>
+    <td>James</td>
+    <td>Los Angeles Lakers</td>
+    <td>$44,474,988</td>
+  </tr>
+  <tr>
+    <td>Kevin</td>
+    <td>Durant</td>
+    <td>Brooklyn Nets</td>
+    <td>$44,119,845</td>
+  </tr>
+  <tr>
+    <td>Bradley</td>
+    <td>Beal</td>
+    <td>Washington Wizards</td>
+    <td>$43,279,250</td>
+  </tr>
+  <tr>
+    <td>Damian</td>
+    <td>Lillard</td>
+    <td>Portland Trail Blazers</td>
+    <td>$42,492,492</td>
+  </tr>
+  <tr>
+    <td>Giannis</td>
+    <td>Antetokounmpo</td>
+    <td>Milwaukee Bucks</td>
+    <td>$42,492,492</td>
+  </tr>
+  <tr>
+    <td>Kawhi</td>
+    <td>Leonard</td>
+    <td>LA Clippers</td>
+    <td>$42,492,492</td>
+  </tr>
+  <tr>
+    <td>Paul</td>
+    <td>George</td>
+    <td>LA Clippers</td>
+    <td>$42,492,492</td>
+  </tr>
+  <tr>
+    <td>Klay</td>
+    <td>Thompson</td>
+    <td>Golden State Warriors</td>
+    <td>$40,600,080</td>
+  </tr>
+  </tbody>
+</table>
+  
+</body>
+</html>
